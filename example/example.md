@@ -1,12 +1,14 @@
 ```bash
-rails g navbar init
-```
-```Ruby
-# app/views/shared/_nav_menu.tmpl.erb
-```
+# app/views/shared/foobar/_navmenu.erbを作成する
+rails g navmenu foobar
 
-```bash
-rails g navmanu Foo Bar
+# app/views/shared/foobar/_nav_item_foo.erb
+# app/views/shared/foobar/_nav_item_bar.erb を追加
+rails g navmenu:add foobar Foo Bar
+
+# app/views/shared/foobar/_nav_item_foo.erbを削除
+rails g navmenu:remove foobar Foo
+
+# app/views/shared/foobar/を削除
+rails destroy navmenu foobar
 ```
-
-
