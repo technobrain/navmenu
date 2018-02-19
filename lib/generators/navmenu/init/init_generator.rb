@@ -5,17 +5,19 @@ module Navmenu
       option :name, type: :string, aliases: '-n'
       long_desc <<-LONGDESC
         USAGE:
-          rails generator NAME [--template] : メニューを生成します．
+          rails generator navmenu init [models...]  [--options] : メニューを生成します．
 
         OPTIONS:
           -t [--template] : テンプレートファイルを指定します
+          -n [--name] : ネームスペースをつける
       LONGDESC
 
 
       def self.source_root
         @source_root ||= File.expand_path(File.join(File.dirname(__FILE__), 'templates'))
       end
-
+      
+      # TODO: nameオプションのディレクトリが存在するときに警告する
       def shared_dir
         option[:name] ? "app/views/shared/#{option[:name]}" : "app/views/shared/"
       end
