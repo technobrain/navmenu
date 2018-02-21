@@ -4,7 +4,7 @@ module Navmenu
     class_option :template, type: :string, aliases: '-t'
     desc <<-LONGDESC
       USAGE:
-        rails generator navmenu:init NAMESPACE [--options] : メニューを生成します．
+        rails generator navmenu:init [NAMESPACE] [--options] : メニューを生成します．
 
       OPTIONS:
         -t [--template]     # テンプレートファイルを指定します

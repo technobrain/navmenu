@@ -6,6 +6,7 @@
 /pkg/
 /spec/reports/
 /log/*.log
+spec/dummy/app/views/shared
 spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log

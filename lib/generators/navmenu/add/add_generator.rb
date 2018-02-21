@@ -1,13 +1,13 @@
 module Navmenu
   module Generators
     class AddGenerator < ::Rails::Generators::Base
-      argument :namespace, type: :string, required: true
       argument :models, type: :array, required: true
+      class_option :namespace, type: :string, aliases: '-n'
       class_option :template, type: :string, aliases: '-t'
 
       desc <<-LONGDESC
         USAGE:
-          rails generator navmenu:add MODELS [--options]
+          rails generator navmenu:add [MODELS] [--options]
 
         OPTIONS:
           -n [--namespace]  # ネームスペースを付与します
@@ -22,16 +22,16 @@ module Navmenu
         raise StandardError unless File.directory?(shared_dir)
         models&.each do |item|
           next if item.blank?
-          copy_file template_file, "#{shared_dir}/_nav_item_#{item}.erb"
+          copy_file template_file, "#{shared_dir}/_nav_item_#{item.downcase.pluralize}.erb"
         end
         rescue StandardError
-          puts "namespace #{namespace} doesn't exist" 
+          puts "namespace #{options[:namespace]} doesn't exist" 
       end
 
       private
       def shared_dir
         base_dir = "#{Rails.root}/app/views/shared"
-        File.join(base_dir, namespace)
+        File.join(base_dir, options[:namespace])
       end
 
       def template_file
