@@ -4,6 +4,6 @@ RSpec.describe Navmenu do
   end
 
   it "has a correct version number" do
-    expect(Navmenu::VERSION).to eq("0.1.0")
+    expect(Navmenu::VERSION).to eq("0.0.1")
   end
 end
