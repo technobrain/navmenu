@@ -1,4 +1,5 @@
-[[Build Status](https://travis-ci.org/technobrain/navmenu.svg?branch=master)](https://travis-ci.org/technobrain/navmenu)
+[![Build Status](https://travis-ci.org/technobrain/swagger_codegen_rails.svg?branch=doc%2Fexample_to_use)](https://travis-ci.org/technobrain/swagger_codegen_rails)
+
 # Navmenu
 Short description and motivation.
 
