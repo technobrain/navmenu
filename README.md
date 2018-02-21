@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/220-TomiyamaAkifumi/navmenu.svg?branch=master)](https://travis-ci.org/220-TomiyamaAkifumi/navmenu)
+[[Build Status](https://travis-ci.org/technobrain/navmenu.svg?branch=master)](https://travis-ci.org/technobrain/navmenu)
 # Navmenu
 Short description and motivation.
 
