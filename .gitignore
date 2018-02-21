@@ -5,6 +5,12 @@
 /doc/
 /pkg/
 /spec/reports/
+/log/*.log
+spec/dummy/db/*.sqlite3
+spec/dummy/db/*.sqlite3-journal
+spec/dummy/log/*.log
+spec/dummy/tmp/
+test/dummy/.sass-cache
 /tmp/
 /vendor/bundle
 
