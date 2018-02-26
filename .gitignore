@@ -17,3 +17,6 @@ test/dummy/.sass-cache
 
 # rspec failure tracking
 .rspec_status
+
+# macOS
+.DS_Store
