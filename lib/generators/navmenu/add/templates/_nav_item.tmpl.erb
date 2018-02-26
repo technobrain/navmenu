@@ -1,0 +1,7 @@
+<li>
+<% if namespase -%>
+  <%%= link_to <%= models.tableize %>, <%= namespace.split('/').join('_') %>_<%= models.tableize %>_path %>
+<% else -%>
+  <%%= link_to <%= models.tableize %>, <%= models.tableize %>_path %>
+<% end -%>
+</li>
