@@ -24,9 +24,9 @@ module Navmenu
           next if item.blank?
           copy_file template_file, "#{shared_dir}/_nav_item_#{item.downcase.pluralize}.erb"
         end
-        rescue StandardError
-          puts e.message
-          puts "namespace #{options[:namespace]} doesn't exist"
+      rescue StandardError => e
+        puts e.message
+        puts "namespace #{options[:namespace]} doesn't exist"
       end
 
       private
