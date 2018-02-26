@@ -13,7 +13,7 @@ module Navmenu
           -n [--namespace]  # ネームスペースを付与します
           -t [--template]   # テンプレートファイルを指定します
       LONGDESC
-      
+
       def self.source_root(path = nil)
         @source_root ||= File.expand_path(File.join(File.dirname(__FILE__), 'templates'))
       end
@@ -25,13 +25,14 @@ module Navmenu
           copy_file template_file, "#{shared_dir}/_nav_item_#{item.downcase.pluralize}.erb"
         end
         rescue StandardError
-          puts "namespace #{options[:namespace]} doesn't exist" 
+          puts e.message
+          puts "namespace #{options[:namespace]} doesn't exist"
       end
 
       private
       def shared_dir
         base_dir = "#{Rails.root}/app/views/shared"
-        File.join(base_dir, options[:namespace])
+        options[:namespace] ? File.join(base_dir, options[:namespace]) : base_dir
       end
 
       def template_file
