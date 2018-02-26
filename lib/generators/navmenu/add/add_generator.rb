@@ -20,11 +20,20 @@ module Navmenu
 
       def create_items
         raise StandardError unless File.directory?(shared_dir)
+        ns = options[:namespace]
         models&.each do |item|
           next if item.blank?
-          copy_file template_file, "#{shared_dir}/_nav_item_#{item.downcase.pluralize}.erb"
+          @item = item
+          # copy_file template_file, "#{shared_dir}/_nav_item_#{item.downcase.pluralize}.erb"
+          template template_file, "#{shared_dir}/_nav_item_#{item.downcase.pluralize}.html.erb"
+
+          inject_into_file "#{shared_dir}/_nav_menu.html.erb", after: "<!-- nav_manu items -->\n" do
+            <<-PARTIAL.strip_heredoc
+            <%= render "shared/#{ns}#{ns ? '/' : ''}nav_item_#{item.downcase.pluralize}" %>
+            PARTIAL
+          end
         end
-        rescue StandardError
+      rescue StandardError => e
           puts e.message
           puts "namespace #{options[:namespace]} doesn't exist"
       end

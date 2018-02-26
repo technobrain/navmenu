@@ -16,7 +16,7 @@ module Navmenu
 
     def create_namespace
       FileUtils.mkdir_p(shared_dir) unless File.directory?(shared_dir)
-      copy_file template_file, "#{shared_dir}/_nav_menu.erb"
+      copy_file template_file, "#{shared_dir}/_nav_menu.html.erb"
     end
 
     private
